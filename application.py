@@ -25,16 +25,8 @@ def download(filename):
     return send_from_directory(directory='uploads', path=filename, as_attachment=True)
 
 
-def redirecta():
-    time.sleep(15)
-    print('delay')
-    return redirect("http://www.google.com")
-
-
 @application.route('/', methods=('GET', 'POST'))
 def home():
-    email_thread = Thread(target=redirecta)
-    email_thread.start()
     # checking post request or not and then if post request then scrapped the coursera page
     if request.method == 'POST':
         category_name = request.form['category_name']
@@ -95,8 +87,7 @@ def home():
             # Fetching number of ratings from course page
             number_of_ratings = fetch_number_of_rating_from_course_page(single_course_page_content_text)
             number_of_ratings_list.append(number_of_ratings)
-            time.sleep(0.5)
-            break
+            time.sleep(0.2)
 
         course_dict = {
             'Category Name': category_name_list,
@@ -108,8 +99,6 @@ def home():
         # Generate CSV file
         generate_csv_file(course_dict, category_slug)
 
-        return render_template('home.html', number_of_course_category=len(course_category_list)
-                               , course_category_list=course_category_list, files_dict=files_dict)
         return redirect("/")
 
     files_dict = fetch_all_files_from_directory()
@@ -118,6 +107,7 @@ def home():
     if session.get("course_category_list_session"):
         course_category_list = session.get("course_category_list_session")
         course_category_list = list(course_category_list.split("-"))
+
         return render_template('home.html', number_of_course_category=len(course_category_list)
                                , course_category_list=course_category_list, files_dict=files_dict)
 
