@@ -30,15 +30,19 @@ def home():  # put application's code here
         category_slug = re.sub(r'[\W_]+', '-', category_name_lower_case)
         course_list_page = category_page + category_slug
 
+        # Fetching course list page data
         course_list_page_content = requests.get(course_list_page)
         soup = BeautifulSoup(course_list_page_content.text, 'html.parser')
         course_list_page_wrapper = soup.find(class_='product-offerings-wrapper')
 
+        # Fetching all link from course list page and filtered by this class [.productCard-title a.CardText-link]
         course_list_page_all_course_link = []
         for a in course_list_page_wrapper.select('.productCard-title a.CardText-link', href=True):
             if a.text:
+                # Save all links into a list [course_list_page_all_course_link]
                 course_list_page_all_course_link.append(a['href'])
 
+        # Initialize 6 blank list into a variable
         category_name_list = []
         course_name_list = []
         first_instructor_name_list = []
@@ -46,12 +50,12 @@ def home():  # put application's code here
         number_of_students_enrolled_list = []
         number_of_ratings_list = []
 
+        # Iterate all links that we already fetched and went through those pages and fetching information
+        # [category name, course name, first instructor name, number of students, ]
         for single_course_link in course_list_page_all_course_link:
             url = scrapping_base_url + single_course_link
             single_course_page_content = requests.get(url)
-            print(url)
             soup = BeautifulSoup(single_course_page_content.text, 'html.parser')
-
             category_name_list.append(category_name)
 
             # getting course name
