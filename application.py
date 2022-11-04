@@ -87,7 +87,7 @@ def home():
             # Fetching number of ratings from course page
             number_of_ratings = fetch_number_of_rating_from_course_page(single_course_page_content_text)
             number_of_ratings_list.append(number_of_ratings)
-            time.sleep(0.1)
+            #time.sleep(0.1)
 
         course_dict = {
             'Category Name': category_name_list,
