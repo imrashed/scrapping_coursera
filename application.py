@@ -88,7 +88,6 @@ def home():
             number_of_ratings = fetch_number_of_rating_from_course_page(single_course_page_content_text)
             number_of_ratings_list.append(number_of_ratings)
             time.sleep(0.5)
-            break
 
         course_dict = {
             'Category Name': category_name_list,
@@ -98,7 +97,7 @@ def home():
         }
 
         # Generate CSV file
-        generate_csv_file(course_dict)
+        generate_csv_file(course_dict, category_slug)
 
         return redirect("/")
 
@@ -125,9 +124,6 @@ def home():
     course_category_list_string = '-'.join(course_category_list)
     session["course_category_list_session"] = course_category_list_string
 
-    #session["course_category_list"] = course_category_list
-    # session["course_category_list_session"] = 5
-    #print(type(course_category_list))
     return render_template('home.html', number_of_course_category=len(course_category_list),
                            course_category_list=course_category_list, files_dict=files_dict)
 

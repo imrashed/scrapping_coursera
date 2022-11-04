@@ -67,9 +67,9 @@ def fetch_all_files_from_directory():
 
 
 # Generate CSV file
-def generate_csv_file(data):
+def generate_csv_file(data, file_name):
     df = pd.DataFrame(data)
-    file_name = CATEGORY_PAGE + ".csv"
+    file_name = file_name + ".csv"
     df.to_csv("uploads/" + file_name)
 
 
