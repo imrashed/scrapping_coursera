@@ -1,5 +1,73 @@
-,Name,Score
-0,a,90
-1,b,80
-2,c,95
-3,d,20
+,Category Name,Course Name,# of Students Enrolled,# of Ratings
+0,Data Science,"Foundations: Data, Data, Everywhere","1,303,388 ",None
+1,Data Science,Marketing Analytics Foundation,"35,745 ",None
+2,Data Science,Data Analysis with R Specialization,"8,920 ","5,541 "
+3,Data Science,Practical Data Science on the AWS Cloud Specialization,"13,106 ",385 
+4,Data Science,Excel Basics for Data Analysis,"140,721 ",None
+5,Data Science,Learn SQL Basics for Data Science Specialization,"166,140 ","7,888 "
+6,Data Science,Excel Skills for Data Analytics and Visualization Specialization,"45,814 ","2,085 "
+7,Data Science,Business Analytics Specialization,"150,671 ","15,407 "
+8,Data Science,Big Data Specialization,"117,600 ","9,331 "
+9,Data Science,"Everyday Excel, Part 1","200,638 ",None
+10,Data Science,Fundamentals of Visualization with Tableau,"176,116 ",None
+11,Data Science,"Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning","310,337 ",None
+12,Data Science,Google Data Analytics Professional Certificate,"1,180,167 ","88,538 "
+13,Data Science,"Foundations: Data, Data, Everywhere","1,303,388 ",None
+14,Data Science,IBM Data Science Professional Certificate,"133,799 ","59,052 "
+15,Data Science,Data Science Specialization,"469,556 ","38,357 "
+16,Data Science,Deep Learning Specialization,"719,089 ","127,189 "
+17,Data Science,Neural Networks and Deep Learning,"1,126,076 ",None
+18,Data Science,Data Science: Foundations using R Specialization,"93,861 ","5,735 "
+19,Data Science,IBM Data Analyst Professional Certificate,"89,897 ","10,500 "
+20,Data Science,Python Data Structures,"904,024 ",None
+21,Data Science,Excel Skills for Business Specialization,"431,408 ","40,949 "
+22,Data Science,Applied Data Science with Python Specialization,"354,093 ","25,170 "
+23,Data Science,Introduction to Data Science Specialization,"71,855 ","11,530 "
+24,Data Science,Assess for Success: Marketing Analytics and Measurement,"23,846 ",None
+25,Data Science,IBM Data Analyst Professional Certificate,"89,897 ","10,500 "
+26,Data Science,Applied Data Science with Python Specialization,"354,093 ","25,170 "
+27,Data Science,Ask Questions to Make Data-Driven Decisions,"475,639 ",None
+28,Data Science,A Crash Course in Data Science,"188,411 ",None
+29,Data Science,Understanding and Visualizing Data with Python,"109,692 ",None
+30,Data Science,Introduction to Data Analysis Using Excel,"232,292 ",None
+31,Data Science,"Foundations: Data, Data, Everywhere","1,303,388 ",None
+32,Data Science,The Data Scientistâs Toolbox,"699,391 ",None
+33,Data Science,Introduction to R Programming for Data Science,"15,882 ",None
+34,Data Science,Introduction to Data Engineering,"58,518 ",None
+35,Data Science,SQL for Data Science,"464,989 ",None
+36,Data Science,"Dasar-dasar Analitik Data: Data, Data di Mana-mana","9,109 ",None
+37,Data Science,Advanced Learning Algorithms,"52,349 ",None
+38,Data Science,"Unsupervised Learning, Recommenders, Reinforcement Learning","38,008 ",None
+39,Data Science,Spatial Analysis and Satellite Imagery in a GIS,"21,777 ",None
+40,Data Science,æ©å¨å­¸ç¿åºç³ä¸ (Machine Learning Foundations)---Algorithmic Foundations,"15,055 ",None
+41,Data Science,Supervised Machine Learning: Regression and Classification ,"157,665 ",None
+42,Data Science,"Fundamentos: dados, dados, em todos os lugares","15,881 ",None
+43,Data Science,æ©å¨å­¸ç¿åºç³ä¸ (Machine Learning Foundations)---Mathematical Foundations,"42,572 ",None
+44,Data Science,Machine Learning Specialization,"88,524 ","5,365 "
+45,Data Science,Excel Skills for Business: Intermediate I,"277,895 ",None
+46,Data Science,IntroduÃ§Ã£o Ã  CiÃªncia da ComputaÃ§Ã£o com Python Parte 1,"208,136 ",None
+47,Data Science,Getting started with TensorFlow 2,"28,959 ",None
+48,Data Science,Meta Database Engineer Professional Certificate,None,None
+49,Data Science,Machine Learning Specialization,"88,524 ","5,365 "
+50,Data Science,IBM Data Warehouse Engineer Professional Certificate,"3,084 ",215 
+51,Data Science,Practical Decision-Making Using No-code ML on AWS,"16,411 recent views",None
+52,Data Science,Mathematics for Engineers Specialization,"4,537 ",238 
+53,Data Science,Linux and Bash for Data Engineering,"2,393 ",None
+54,Data Science,The Structured Query Language (SQL),"16,402 ",None
+55,Data Science,Business Data Management and Communication Specialization,"2,851 recent views",16 
+56,Data Science,Work Smarter with Microsoft Excel,"41,179 ",None
+57,Data Science,Writing Secure Code in C++ Specialization,None,None
+58,Data Science,Analyzing and Visualizing Data in Looker,"12,802 ",None
+59,Data Science,Meta Marketing Analytics Professional Certificate,"29,785 ","1,255 "
+60,Data Science,SQL for Data Science,"464,989 ",None
+61,Data Science,"Everyday Excel, Part 1","200,638 ",None
+62,Data Science,IBM Data Engineering Professional Certificate,None,None
+63,Data Science,Share Data Through the Art of Visualization,"217,391 ",None
+64,Data Science,Programming for Everybody (Getting Started with Python),"2,702,863 ",None
+65,Data Science,DeepLearning.AI TensorFlow Developer Professional Certificate,"157,864 ","19,421 "
+66,Data Science,Introduction to Data Science in Python,"703,379 ",None
+67,Data Science,Mathematics for Machine Learning Specialization,"161,559 ","11,640 "
+68,Data Science,Introduction to Machine Learning in Production,"65,160 ",None
+69,Data Science,Introduction to Probability and Data with R,"253,549 ",None
+70,Data Science,IBM Data Analytics with Excel and R Professional Certificate,None,None
+71,Data Science,Python Data Structures,"904,024 ",None

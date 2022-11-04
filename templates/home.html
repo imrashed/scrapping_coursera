@@ -29,7 +29,7 @@
     <div class="form-group">
         <form method="post">
             <label for="category_list">Select your category list</label>
-            <select class="form-control" name="category_list" id="category_list">
+            <select class="form-control" name="category_name" id="category_list">
             {%for i in range(0, number_of_course_category)%}
                 <option value="{{course_category_list[i]}}">{{course_category_list[i]}}</option>
             {%endfor%}

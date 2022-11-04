@@ -1,5 +1,73 @@
-,Name,Score
-0,a,90
-1,b,80
-2,c,95
-3,d,20
+,Category Name,Course Name,# of Students Enrolled,# of Ratings
+0,Computer Science,Learning How to Learn: Powerful mental tools to help you master tough subjects,"3,351,684 ",None
+1,Computer Science,Python for Everybody Specialization,"1,363,260 ","197,919 "
+2,Computer Science,Programming for Everybody (Getting Started with Python),"2,702,863 ",None
+3,Computer Science,Google IT Support Professional Certificate,None,None
+4,Computer Science,Google Data Analytics Professional Certificate,"1,180,167 ","88,538 "
+5,Computer Science,Deep Learning Specialization,"719,089 ","127,189 "
+6,Computer Science,Neural Networks and Deep Learning,"1,126,076 ",None
+7,Computer Science,"Algorithms, Part I","1,029,181 ",None
+8,Computer Science,Python Data Structures,"904,024 ",None
+9,Computer Science,Applied Data Science with Python Specialization,"354,093 ","25,170 "
+10,Computer Science,"HTML, CSS, and Javascript for Web Developers","836,914 ",None
+11,Computer Science,Java Programming and Software Engineering Fundamentals Specialization,"272,994 ","13,518 "
+12,Computer Science,Agile Project Management,"186,376 ",None
+13,Computer Science,Hypothesis-Driven Development,"43,604 ",None
+14,Computer Science,Introduction to Software Product Management,"109,593 ",None
+15,Computer Science,Mastering the Software Engineering Interview,"67,099 ",None
+16,Computer Science,How to Manage a Remote Team,"46,898 ",None
+17,Computer Science,Understanding User Needs,"22,519 ",None
+18,Computer Science,Managing an Agile Team,"56,238 ",None
+19,Computer Science,Agile Planning for Software Products,"58,321 ",None
+20,Computer Science,Google Cloud Digital Leader Training Professional Certificate,"25,740 ","1,524 "
+21,Computer Science,"Writing, Running, and Fixing Code in C","50,391 ",None
+22,Computer Science,Engineering Project Management Specialization,"46,938 ","2,850 "
+23,Computer Science,Leading Teams: Developing as a Leader,"156,311 ",None
+24,Computer Science,Keamanan IT: Pertahanan terhadap Kejahatan Digital,"6,763 ",None
+25,Computer Science,ç¨ Python ååç®¡ç¨å¼è¨­è¨ï¼ä¸ï¼(Programming for Business Computing in Python (1)),"32,535 ",None
+26,Computer Science,"Programming Languages, Part B","47,306 ",None
+27,Computer Science,Fundamentos do design da experiÃªncia do usuÃ¡rio (UX),"12,124 ",None
+28,Computer Science,Build a Modern Computer from First Principles: Nand to Tetris Part II (project-centered course),"53,594 ",None
+29,Computer Science,SeguranÃ§a de TI: Defesa Contra as Artes Obscuras do Mundo Digital,"4,921 ",None
+30,Computer Science,"Programming Languages, Part C","32,396 ",None
+31,Computer Science,Essential Cloud Infrastructure: Foundation dalam bahasa Indonesia,"1,912 ",None
+32,Computer Science,Advanced Learning Algorithms,"52,349 ",None
+33,Computer Science,"Unsupervised Learning, Recommenders, Reinforcement Learning","38,008 ",None
+34,Computer Science,"Algorithms, Part II","266,897 ",None
+35,Computer Science,IT Support Google Professional Certificate,"18,672 ","3,130 "
+36,Computer Science,Machine Learning Engineering for Production (MLOps) Specialization,"40,992 ","2,424 "
+37,Computer Science,Algorithms Specialization,"97,496 ","5,276 "
+38,Computer Science,Data Structures and Algorithms Specialization,"290,038 ","12,536 "
+39,Computer Science,Natural Language Processing Specialization,"86,018 ","4,504 "
+40,Computer Science,Java Programming and Software Engineering Fundamentals Specialization,"272,994 ","13,518 "
+41,Computer Science,C for Everyone: Structured Programming,"48,537 ",None
+42,Computer Science,Algorithmic Toolbox,"458,703 ",None
+43,Computer Science,Generative Adversarial Networks (GANs) Specialization,"28,475 ","1,810 "
+44,Computer Science,Computational Thinking for Problem Solving,"86,711 ",None
+45,Computer Science,"Algorithms, Part I","1,029,181 ",None
+46,Computer Science,Introduction to Logic,"190,885 ",None
+47,Computer Science,"Introduction to Data, Signal, and Image Analysis with MATLAB","21,390 ",None
+48,Computer Science,DeepLearning.AI TensorFlow Developer Professional Certificate,"157,864 ","19,421 "
+49,Computer Science,Google Cloud Digital Leader Training Professional Certificate,"25,740 ","1,524 "
+50,Computer Science,AWS Cloud Solutions Architect  Professional Certificate,"12,993 recent views",None
+51,Computer Science,Microsoft Azure Data Engineering Associate (DP-203) Professional Certificate,"10,303 ",350 
+52,Computer Science,Exam Prep: AWS Certified Cloud Practitioner Foundations,"4,699 ",None
+53,Computer Science,Oracle Cloud Infrastructure Foundations,"10,757 ",None
+54,Computer Science,Google IT Support Professional Certificate,"1,105,233 ","146,123 "
+55,Computer Science,Microsoft 365 Fundamentals Specialization,"24,419 ",661 
+56,Computer Science,Preparing for Google Cloud Certification: Cloud DevOps Engineer Professional Certificate,"27,448 ","2,130 "
+57,Computer Science,Oracle Cloud Infrastructure Architect Professional,"1,661 ",None
+58,Computer Science,Information Technology (IT) and Cloud Fundamentals Specialization,"3,251 ",145 
+59,Computer Science,Oracle SQL Databases Specialization,"6,068 ",242 
+60,Computer Science,Meta Front-End Developer Professional Certificate,"56,528 ","3,280 "
+61,Computer Science,Meta Back-End Developer Professional Certificate,None,None
+62,Computer Science,Programming for Everybody (Getting Started with Python),"2,702,863 ",None
+63,Computer Science,"Programming Foundations with JavaScript, HTML and CSS","517,530 ",None
+64,Computer Science,Data Structures and Algorithms Specialization,"290,038 ","12,536 "
+65,Computer Science,Python Basics,"339,519 ",None
+66,Computer Science,IBM DevOps and Software Engineering Professional Certificate,"16,099 ","1,112 "
+67,Computer Science,Object Oriented Programming in Java,"264,537 ",None
+68,Computer Science,Fundamentals of Computing Specialization,"55,608 ","2,841 "
+69,Computer Science,Algorithmic Toolbox,"458,703 ",None
+70,Computer Science,Mastering the Software Engineering Interview,"67,099 ",None
+71,Computer Science,Software Design and Architecture Specialization,"53,743 ","2,355 "
