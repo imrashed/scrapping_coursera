@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 .ebextensions
 flask_session
+uploads
