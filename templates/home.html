@@ -41,7 +41,7 @@
     
     <h4>Generated CSV file list</h4>
     <ol>
-        {% for file in file_obj %}
+        {% for file in files_dict %}
             <li> <a href="{{ file['course_category_url'] }}">{{ file['course_category_name'] }}</a> </li>
         {% endfor %}
     </ol>

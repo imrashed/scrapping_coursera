@@ -7,28 +7,32 @@ import unidecode
 import pandas as pd
 import os
 import time
+from config import SCRAPING_BASE_URL, PORT, HOST, CATEGORY_PAGE
+from utils import fetch_course_name_from_course_page, fetch_first_instructor_name_from_course_page, \
+    fetch_course_description_from_course_page, fetch_number_of_students_enrolled_from_course_page, \
+    fetch_number_of_rating_from_course_page, fetch_all_files_from_directory, generate_csv_file
+
 # create a server instance
 application = Flask(__name__)
 application.config["SESSION_PERMANENT"] = False
 application.config["SESSION_TYPE"] = "filesystem"
 Session(application)
 
+
 @application.route('/<path:filename>', methods=['GET'])
 def download(filename):
     # need to check if file exist or not if not exist need to handle error
     return send_from_directory(directory='uploads', path=filename, as_attachment=True)
 
-@application.route('/', methods=('GET', 'POST'))
-def home():  # put application's code here
-    scrapping_base_url = "https://www.coursera.org"
-    category_page = scrapping_base_url + '/browse/'
 
+@application.route('/', methods=('GET', 'POST'))
+def home():
     # checking post request or not and then if post request then scrapped the coursera page
     if request.method == 'POST':
         category_name = request.form['category_name']
         category_name_lower_case = unidecode.unidecode(category_name).lower()
         category_slug = re.sub(r'[\W_]+', '-', category_name_lower_case)
-        course_list_page = category_page + category_slug
+        course_list_page = CATEGORY_PAGE + category_slug
 
         # Fetching course list page data
         course_list_page_content = requests.get(course_list_page)
@@ -39,7 +43,7 @@ def home():  # put application's code here
         course_list_page_all_course_link = []
         for a in course_list_page_wrapper.select('.productCard-title a.CardText-link', href=True):
             if a.text:
-                # Save all links into a list [course_list_page_all_course_link]
+                # Store all links into a list [course_list_page_all_course_link]
                 course_list_page_all_course_link.append(a['href'])
 
         # Initialize 6 blank list into a variable
@@ -50,56 +54,41 @@ def home():  # put application's code here
         number_of_students_enrolled_list = []
         number_of_ratings_list = []
 
-        # Iterate all links that we already fetched and went through those pages and fetching information
-        # [category name, course name, first instructor name, number of students, ]
+        """  
+            Iterate all links that we already fetched and went through those pages and fetching information
+            [category name, course name, first instructor name, number of students enrolled, number of ratings]
+         """
         for single_course_link in course_list_page_all_course_link:
-            url = scrapping_base_url + single_course_link
+            url = SCRAPING_BASE_URL + single_course_link
+
+            # Fetch all information from individual course page
             single_course_page_content = requests.get(url)
-            soup = BeautifulSoup(single_course_page_content.text, 'html.parser')
+            single_course_page_content_text = BeautifulSoup(single_course_page_content.text, 'html.parser')
+
+            # Store category name into category_name_list variable
             category_name_list.append(category_name)
 
-            # getting course name
-            try:
-                course_name = soup.select_one('h1').text
-            except Exception as e:
-                course_name = "No title found"
-                print(e)
+            # Fetching course name
+            course_name = fetch_course_name_from_course_page(single_course_page_content_text)
             course_name_list.append(course_name)
 
-            # getting first instructor name
-            try:
-                first_instructor_name = soup.select_one('div.rc-BannerInstructorInfo span').text.split('+')
-                first_instructor_name = first_instructor_name[0]
-            except Exception as e:
-                first_instructor_name = "No Instructor found"
-                print(e)
+            # Fetching first instructor name
+            first_instructor_name = fetch_first_instructor_name_from_course_page(single_course_page_content_text)
             first_instructor_name_list.append(first_instructor_name)
 
-            # getting course description
-            try:
-                course_description = soup.select_one('.description').text
-            except Exception as e:
-                course_description = 'No description found'
-                print(e)
+            # Fetching course description
+            course_description = fetch_course_description_from_course_page(single_course_page_content_text)
             course_description_list.append(course_description)
 
-            # getting number of students enrolled
-            try:
-                number_of_students_enrolled = soup.select_one('.rc-ProductMetrics').text.replace("already enrolled", "")
-            except Exception as e:
-                number_of_students_enrolled = 'None'
-                print(e)
+            # Fetching number of students enrolled from course page
+            number_of_students_enrolled = fetch_number_of_students_enrolled_from_course_page(single_course_page_content_text)
             number_of_students_enrolled_list.append(number_of_students_enrolled)
 
-            # getting number of ratings
-            try:
-                number_of_ratings = soup.select_one('.ratings-count-expertise-style span span').\
-                    text.replace("ratings", "")
-            except Exception as e:
-                number_of_ratings = 'None'
-                print(e)
+            # Fetching number of ratings from course page
+            number_of_ratings = fetch_number_of_rating_from_course_page(single_course_page_content_text)
             number_of_ratings_list.append(number_of_ratings)
             time.sleep(0.5)
+            break
 
         course_dict = {
             'Category Name': category_name_list,
@@ -108,22 +97,22 @@ def home():  # put application's code here
             '# of Ratings': number_of_ratings_list,
         }
 
-        df = pd.DataFrame(course_dict)
-        file_name = category_slug + ".csv"
-        df.to_csv("uploads/" + file_name)
+        # Generate CSV file
+        generate_csv_file(course_dict)
+
         return redirect("/")
 
-    # scan the directory and getting all files name
-    file_obj = [{"course_category_name": x.name.replace(".csv", "").replace("-", " ").title(), "course_category_url":
-        x.name} for x in os.scandir("uploads")]
+    files_dict = fetch_all_files_from_directory()
 
     # check course category list exist on session variable.
-    # if session.get("course_category_list"):
-    #     course_category_list = session.get("course_category_list")
-    #     return render_template('home.html', number_of_course_category=len(course_category_list),
-    #                        course_category_list=course_category_list, file_obj=file_obj)
+    if session.get("course_category_list_session"):
+        course_category_list = session.get("course_category_list_session")
+        course_category_list = list(course_category_list.split("-"))
 
-    category_page_content = requests.get(category_page)
+        return render_template('home.html', number_of_course_category=len(course_category_list)
+                               , course_category_list=course_category_list, files_dict=files_dict)
+
+    category_page_content = requests.get(CATEGORY_PAGE)
     soup = BeautifulSoup(category_page_content.text, 'html.parser')
     course_category_wrapper = soup.find(class_='topic-skills-wrapper')
     course_category_items = course_category_wrapper.select('.domain-card-name span')
@@ -133,12 +122,15 @@ def home():  # put application's code here
         course_category_name = course_category.contents
         course_category_list.extend(course_category_name)
 
+    course_category_list_string = '-'.join(course_category_list)
+    session["course_category_list_session"] = course_category_list_string
+
     #session["course_category_list"] = course_category_list
     # session["course_category_list_session"] = 5
     #print(type(course_category_list))
     return render_template('home.html', number_of_course_category=len(course_category_list),
-                           course_category_list=course_category_list, file_obj=file_obj)
+                           course_category_list=course_category_list, files_dict=files_dict)
 
 
 if __name__ == '__main__':
-    application.run(port=80, host='0.0.0.0')
+    application.run(port=PORT, host=HOST)

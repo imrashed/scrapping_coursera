@@ -1,5 +1,73 @@
-,Name,Score
-0,a,90
-1,b,80
-2,c,95
-3,d,20
+,Category Name,Course Name,# of Students Enrolled,# of Ratings
+0,Business,Marketing Analytics with Meta,"6,659 ",None
+1,Business,"Brand Management: Aligning Business, Brand and Behaviour","331,127 ",None
+2,Business,Social Media Management ,"104,393 ",None
+3,Business,Influencer Marketing Strategy,"40,209 ",None
+4,Business,Brand Identity and Strategy,"49,497 ",None
+5,Business,Strategic Management,"98,263 ",None
+6,Business, Storytelling in Branding and Content Marketing ,"21,996 ",None
+7,Business,Introduction to Social Media Marketing,"260,050 ",None
+8,Business,Principles of Public Relations,"5,825 ",None
+9,Business,Creative Thinking: Techniques and Tools for Success,"249,523 ",None
+10,Business,"Ready, Set, Future! Introduction to Futures Thinking","35,168 ",None
+11,Business,The Strategy of Content Marketing,"363,975 ",None
+12,Business,Storytelling and influencing: Communicate with impact,"60,508 ",None
+13,Business,Good with Words: Speaking and Presenting Specialization,"4,958 ",76 
+14,Business,Introduction to Negotiation: A Strategic Playbook for Becoming a Principled and Persuasive Negotiator,"464,385 ",None
+15,Business,Improve Your English Communication Skills Specialization,"548,124 ","14,881 "
+16,Business,Communication Strategies for a Virtual Age,"169,762 ",None
+17,Business, Storytelling in Branding and Content Marketing ,"21,996 ",None
+18,Business,Emotional and Social Intelligence,"25,397 ",None
+19,Business,Project Management & Other Tools for Career Development Specialization,"82,344 ","5,812 "
+20,Business,Good with Words: Writing and Editing Specialization,"47,094 ","1,573 "
+21,Business,Professional Skills for the Workplace Specialization,"9,687 ",486 
+22,Business,High-Impact Business Writing,"179,072 ",None
+23,Business,Leadership and Influence,"9,406 ",None
+24,Business,English for Career Development,"1,890,815 ",None
+25,Business,Improve Your English Communication Skills Specialization,"548,124 ","14,881 "
+26,Business,Financial Markets,"1,366,709 ",None
+27,Business,Successful Negotiation: Essential Strategies and Skills,"1,293,483 ",None
+28,Business,Career Success Specialization,"177,698 ","13,737 "
+29,Business,Google Project Management: Professional Certificate,None,None
+30,Business,IBM Data Analyst Professional Certificate,"89,897 ","10,500 "
+31,Business,Key Technologies for Business Specialization,"13,231 ","1,166 "
+32,Business,Foundations of Project Management,"912,486 ",None
+33,Business,Excel Skills for Business Specialization,"431,408 ","40,949 "
+34,Business,"Speak English Professionally: In Person, Online & On the Phone","835,802 ",None
+35,Business,AI For Everyone,"830,528 ",None
+36,Business,Project Initiation: Starting a Successful Project,"311,057 ",None
+37,Business,Budgeting and Scheduling Projects,"150,814 ",None
+38,Business,How to Manage a Remote Team,"46,898 ",None
+39,Business,Agile Meets Design Thinking,"149,712 ",None
+40,Business,Agile Leader Training,"6,659 ",None
+41,Business,Agile Project Management,"186,376 ",None
+42,Business,Plan a Successful Freelancing Business ,"3,526 ",None
+43,Business,The Art of Negotiation,"137,483 ",None
+44,Business,Construction Project Management,"94,767 ",None
+45,Business,Organisational design: Know your organisation,"41,316 ",None
+46,Business,Entrepreneurship 2: Launching your Start-Up,"51,297 ",None
+47,Business,High-Impact Business Writing,"179,072 ",None
+48,Business,Fundamentos do gerenciamento de projetos,"10,724 ",None
+49,Business,Proje YÃ¶netiminin Temelleri,"2,722 ",None
+50,Business,Liderazgo para el Siglo XXI: proyecto final,"6,273 ",None
+51,Business,Excel Skills for Business: Intermediate I,"277,895 ",None
+52,Business,Effective Compliance Programs,"11,681 ",None
+53,Business,El Abogado del Futuro: Legaltech y la TransformaciÃ³n Digital del Derecho,"32,690 ",None
+54,Business,IntroducciÃ³n al marketing en redes sociales,"7,397 ",None
+55,Business,NegociaÃ§Ãµes de sucesso: estratÃ©gias e habilidades essenciais (em PortuguÃªs),"75,495 ",None
+56,Business,Estilos de Liderazgo: opciones para avanzar en desafÃ­os complejos,"35,088 ",None
+57,Business,What is Corruption: Anti-Corruption and Compliance,"11,270 ",None
+58,Business,Liderazgo efectivo para el siglo XXI Specialization,"19,707 ","1,543 "
+59,Business,Excel Skills for Business: Essentials,"748,599 ",None
+60,Business,Foundations of Digital Marketing and E-commerce,"231,203 ",None
+61,Business,Meta Social Media Marketing Professional Certificate,"155,614 ","12,282 "
+62,Business,Digital Marketing Specialization,"23,122 ","16,336 "
+63,Business,Meta Marketing Analytics Professional Certificate,None,None
+64,Business,Search Engine Optimization (SEO) Specialization,"128,029 ","9,877 "
+65,Business,Social Media Marketing Specialization,"91,185 ","4,330 "
+66,Business,Marketing in a Digital World,"541,916 ",None
+67,Business,Introduction to Marketing,"331,599 ",None
+68,Business,Marketing Analytics Foundation,"35,745 ",None
+69,Business,Advanced Search Engine Optimization Strategies,"46,044 ",None
+70,Business,Introduction to the Digital Advertising Landscape,"27,166 ",None
+71,Business,Search Advertising,"10,379 ",None
