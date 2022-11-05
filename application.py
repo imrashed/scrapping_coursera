@@ -9,7 +9,7 @@ import unidecode
 import pandas as pd
 from threading import Thread
 import time
-from config import SCRAPING_BASE_URL, PORT, HOST, CATEGORY_PAGE
+from config import SCRAPING_BASE_URL, PORT, HOST, CATEGORY_PAGE, UPLOAD_FOLDER_NAME
 from utils import fetch_course_name_from_course_page, fetch_first_instructor_name_from_course_page, \
     fetch_course_description_from_course_page, fetch_number_of_students_enrolled_from_course_page, \
     fetch_number_of_rating_from_course_page, fetch_all_files_from_directory, generate_csv_file, \
@@ -58,8 +58,8 @@ def home():
             .format(category_name)
 
     # Creating upload folder for CSV file upload
-    if not os.path.exists("uploads"):
-        os.mkdir("uploads")
+    if not os.path.exists(UPLOAD_FOLDER_NAME):
+        os.mkdir(UPLOAD_FOLDER_NAME)
 
     # Fetch all files from uploads directory
     files_dict = fetch_all_files_from_directory()

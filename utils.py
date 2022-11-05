@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from config import CATEGORY_PAGE, SCRAPING_BASE_URL
+from config import CATEGORY_PAGE, SCRAPING_BASE_URL, UPLOAD_FOLDER_NAME
 
 
 def fetch_course_name_from_course_page(single_course_page_content_text):
@@ -71,7 +71,7 @@ def fetch_all_files_from_directory():
 def generate_csv_file(data, file_name):
     df = pd.DataFrame(data)
     file_name = file_name + ".csv"
-    df.to_csv("uploads/" + file_name)
+    df.to_csv(UPLOAD_FOLDER_NAME + "/" + file_name)
 
 
 def fetch_course_info_from_course_page(course_list_page_all_course_link, category_name, category_slug):
