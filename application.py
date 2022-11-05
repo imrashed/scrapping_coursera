@@ -50,6 +50,10 @@ def home():
                 # Store all links into a list [course_list_page_all_course_link]
                 course_list_page_all_course_link.append(a['href'])
 
+        # Creating upload folder for CSV file upload
+        if not os.path.exists("uploads"):
+            os.mkdir("uploads")
+
         # Fetching course info from every page by a new thread
         fetching_course_info_thread = Thread(target=fetch_course_info_from_course_page,
                                              args=(course_list_page_all_course_link, category_name, category_slug))

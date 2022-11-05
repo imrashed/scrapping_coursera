@@ -71,8 +71,6 @@ def fetch_all_files_from_directory():
 def generate_csv_file(data, file_name):
     df = pd.DataFrame(data)
     file_name = file_name + ".csv"
-    if not os.path.exists("uploads"):
-        os.mkdir("uploads")
     df.to_csv("uploads/" + file_name)
 
 
