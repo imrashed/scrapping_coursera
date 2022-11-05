@@ -109,7 +109,8 @@ def home():
         # generate_csv_file(course_dict, category_slug)
 
         #end
-        msg = "Your CSV file {} is being generated. Please refresh page after a while.".format(category_name)
+        msg = "Your CSV file {} is being generated. After the file is ready it will automatically fetch the CSV file."\
+            .format(category_name)
         #return redirect("/")
 
     files_dict = fetch_all_files_from_directory()
