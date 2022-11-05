@@ -2,8 +2,9 @@
 import os
 
 import pandas as pd
-
-from config import CATEGORY_PAGE
+import requests
+from bs4 import BeautifulSoup
+from config import CATEGORY_PAGE, SCRAPING_BASE_URL
 
 
 def fetch_course_name_from_course_page(single_course_page_content_text):
@@ -72,4 +73,60 @@ def generate_csv_file(data, file_name):
     file_name = file_name + ".csv"
     df.to_csv("uploads/" + file_name)
 
+
+def fetch_course_info_from_course_page(course_list_page_all_course_link, category_name, category_slug):
+    # Initialize 6 blank list into a variable
+    category_name_list = []
+    course_name_list = []
+    first_instructor_name_list = []
+    course_description_list = []
+    number_of_students_enrolled_list = []
+    number_of_ratings_list = []
+
+    """  
+        Iterate all links that we already fetched and went through those pages and fetching information
+        [category name, course name, first instructor name, number of students enrolled, number of ratings]
+     """
+    for single_course_link in course_list_page_all_course_link:
+        url = SCRAPING_BASE_URL + single_course_link
+
+        # Fetch all information from individual course page
+        single_course_page_content = requests.get(url)
+        single_course_page_content_text = BeautifulSoup(single_course_page_content.text, 'html.parser')
+
+        # Store category name into category_name_list variable
+        category_name_list.append(category_name)
+
+        # Fetching course name
+        course_name = fetch_course_name_from_course_page(single_course_page_content_text)
+        course_name_list.append(course_name)
+
+        # Fetching first instructor name
+        first_instructor_name = fetch_first_instructor_name_from_course_page(single_course_page_content_text)
+        first_instructor_name_list.append(first_instructor_name)
+
+        # Fetching course description
+        course_description = fetch_course_description_from_course_page(single_course_page_content_text)
+        course_description_list.append(course_description)
+
+        # Fetching number of students enrolled from course page
+        number_of_students_enrolled = fetch_number_of_students_enrolled_from_course_page(
+            single_course_page_content_text)
+        number_of_students_enrolled_list.append(number_of_students_enrolled)
+
+        # Fetching number of ratings from course page
+        number_of_ratings = fetch_number_of_rating_from_course_page(single_course_page_content_text)
+        number_of_ratings_list.append(number_of_ratings)
+        # time.sleep(0.1)
+        break
+
+    course_dict = {
+        'Category Name': category_name_list,
+        'Course Name': course_name_list,
+        '# of Students Enrolled': number_of_students_enrolled_list,
+        '# of Ratings': number_of_ratings_list,
+    }
+
+    # Generate CSV file
+    generate_csv_file(course_dict, category_slug)
 

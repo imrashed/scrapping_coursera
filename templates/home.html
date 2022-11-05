@@ -14,37 +14,49 @@
         section {
             padding-bottom: 20px;
         }
-         ol, h4 {
+        ol, h4 {
             text-align: left;
         }
-         ol {
-             padding-left: 20px;
-         }
+        ol {
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
 
-    <h3>Coding AllStars Python</h3>
-    <section>
+<h3>Coding AllStars Python</h3>
+<section>
     <div class="form-group">
         <form method="post">
             <label for="category_list">Select your category list</label>
-            <select class="form-control" name="category_name" id="category_list">
-            {%for i in range(0, number_of_course_category)%}
-                <option value="{{course_category_list[i]}}">{{course_category_list[i]}}</option>
-            {%endfor%}
+            <select required class="form-control" name="category_name" id="category_list">
+                {%for i in range(0, number_of_course_category)%}
+                    <option value="{{course_category_list[i]}}">{{course_category_list[i]}}</option>
+                {%endfor%}
             </select><br />
-            <input type="submit">
+            <input type="submit"> <br/>
+            {% if msg %}
+                <div class="alert alert-success mt-3" role="alert">
+                    {{ msg }}
+                </div>
+            {% endif %}
         </form>
     </div>
-    </section>
-    
-    <h4>Generated CSV file list</h4>
-    <ol>
-        {% for file in files_dict %}
-            <li> <a href="{{ file['course_category_url'] }}">{{ file['course_category_name'] }}</a> </li>
-        {% endfor %}
-    </ol>
+</section>
 
+<h4>Generated CSV file list</h4>
+<ol>
+    {% for file in files_dict %}
+        <li> <a href="{{ file['course_category_url'] }}">{{ file['course_category_name'] }}</a> </li>
+    {% endfor %}
+</ol>
+{% if msg %}
+    <script>
+        setTimeout(alertFunc, 60000);
+        function alertFunc() {
+            window.location.replace("/");
+        }
+    </script>
+{% endif %}
 </body>
 </html>
