@@ -52,10 +52,10 @@ def fetch_number_of_students_enrolled_from_course_page(single_course_page_conten
 # Fetching number of ratings from course page
 def fetch_number_of_rating_from_course_page(single_course_page_content_text):
     try:
-        number_of_ratings = single_course_page_content_text.select_one('.ratings-count-expertise-style span span'). \
+        number_of_ratings = single_course_page_content_text.select_one('.XDPRating div.color-white span span'). \
             text.replace("ratings", "")
     except Exception as e:
-        number_of_ratings = 'None'
+        number_of_ratings = 'None.'
         print(e)
     return number_of_ratings
 
@@ -89,7 +89,7 @@ def fetch_course_info_from_course_page(course_list_page_all_course_link, categor
      """
     for single_course_link in course_list_page_all_course_link:
         url = SCRAPING_BASE_URL + single_course_link
-
+        print(url)
         # Fetch all information from individual course page
         single_course_page_content = requests.get(url)
         single_course_page_content_text = BeautifulSoup(single_course_page_content.text, 'html.parser')
