@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scrapper</title>
+    <title>Scraper</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <style>
-        section, h3, ol, h4 {
+        .wrapper {
             margin: 15px auto 0;
             text-align: center;
             width: 500px;
-
-        }
-        section {
-            padding-bottom: 20px;
         }
         ol, h4 {
             text-align: left;
@@ -23,18 +19,19 @@
     </style>
 </head>
 <body>
+<div class="wrapper">
+    <h3 class="mb-4">Coding AllStars Python</h3>
 
-<h3>Coding AllStars Python</h3>
-<section>
     <div class="form-group">
         <form method="post">
-            <label for="category_list">Select your category list</label>
+            {#            <label for="category_list">Select your category list</label>#}
             <select required class="form-control" name="category_name" id="category_list">
+                <option value="" hidden disabled selected> Select your category</option>
                 {%for i in range(0, number_of_course_category)%}
                     <option value="{{course_category_list[i]}}">{{course_category_list[i]}}</option>
                 {%endfor%}
             </select><br />
-            <input type="submit"> <br/>
+            <input type="submit" class="btn btn-primary btn-lg"> <br/>
             {% if msg %}
                 <div class="alert alert-success mt-3" role="alert">
                     {{ msg }}
@@ -42,21 +39,23 @@
             {% endif %}
         </form>
     </div>
-</section>
 
-<h4>Generated CSV file list</h4>
-<ol>
-    {% for file in files_dict %}
-        <li> <a href="{{ file['course_category_url'] }}">{{ file['course_category_name'] }}</a> </li>
-    {% endfor %}
-</ol>
-{% if msg %}
-    <script>
-        setTimeout(alertFunc, 120000);
-        function alertFunc() {
-            window.location.replace("/");
-        }
-    </script>
-{% endif %}
+    {% if files_dict %}
+        <h4 class="mt-5">Generated CSV file list</h4>
+    {% endif %}
+    <ol>
+        {% for file in files_dict %}
+            <li> <a href="{{ file['course_category_url'] }}">{{ file['course_category_name'] }}</a> </li>
+        {% endfor %}
+    </ol>
+    {% if msg %}
+        <script>
+            setTimeout(alertFunc, 120000);
+            function alertFunc() {
+                window.location.replace("/");
+            }
+        </script>
+    {% endif %}
+</div>
 </body>
 </html>
